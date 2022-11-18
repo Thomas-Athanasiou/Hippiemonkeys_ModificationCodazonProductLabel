@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+    Thomas Athanasiou at Hippiemonkeys
+    Copyright (c) 2022 Hippiemonkeys Web Inteligence EE (https://hippiemonkeys.com)
+    Hippiemonkeys_ModificationCodazonProductLabel
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Hippiemonkeys\Modification\Helper\Config\Section\ModificationCodazonProductLabel" type="Hippiemonkeys\Modification\Helper\Config\Section\Modification">
+        <arguments>
+            <argument name="section" xsi:type="string">hippiemonkeys_modification</argument>
+            <argument name="group" xsi:type="string">codazonproductlabel</argument>
+            <argument name="modificationGroup" xsi:type="string">general</argument>
+        </arguments>
+    </virtualType>
+    <type name="Hippiemonkeys\ModificationCodazonProductLabel\Block\ProductLabel">
+        <arguments>
+            <argument name="config" xsi:type="object">Hippiemonkeys\Modification\Helper\Config\Section\ModificationCodazonProductLabel</argument>
+        </arguments>
+    </type>
+    <type name="Hippiemonkeys\ModificationCodazonProductLabel\Model\Filter">
+        <arguments>
+            <argument name="config" xsi:type="object">Hippiemonkeys\Modification\Helper\Config\Section\ModificationCodazonProductLabel</argument>
+        </arguments>
+    </type>
+    <type name="Hippiemonkeys\ModificationCodazonProductLabel\Block\Adminhtml\ProductLabel\AbstractHtmlField\Variables">
+        <arguments>
+            <argument name="config" xsi:type="object">Hippiemonkeys\Modification\Helper\Config\Section\ModificationCodazonProductLabel</argument>
+        </arguments>
+    </type>
+    <type name="Hippiemonkeys\ModificationCodazonProductLabel\Block\Adminhtml\ProductLabel\Edit\Tab\Main">
+        <arguments>
+            <argument name="config" xsi:type="object">Hippiemonkeys\Modification\Helper\Config\Section\ModificationCodazonProductLabel</argument>
+        </arguments>
+    </type>
+    <type name="Codazon\ProductLabel\Helper\Data">
+        <arguments>
+            <argument name="labelBlock" xsi:type="object">Hippiemonkeys\ModificationCodazonProductLabel\Block\ProductLabel</argument>
+        </arguments>
+    </type>
+</config>
